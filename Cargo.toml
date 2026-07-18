@@ -1,0 +1,172 @@
+[workspace]
+resolver = "2"
+members = [
+    # ===== FLUX-SPECIFIC CRATES =====
+    "crates/flux_parser",
+    "crates/flux_lsp",
+    "crates/flux_binary_view",
+    "crates/flux_visualizer",
+    "crates/flux_memory",
+    "crates/flux_debugger",
+    "crates/flux_build",
+    "crates/flux_data_inspector",
+    "crates/flux_bit_slice",
+    "crates/flux_struct_visualizer",
+    "crates/flux_endianness",
+    "crates/flux_binary_playground",
+    "crates/flux_comptime_viz",
+    "crates/flux_contract_inspector",
+    "crates/flux_template_viz",
+    "crates/flux_binary_explorer",
+    "crates/flux_build_dashboard",
+    "crates/flux_project_analyzer",
+    "crates/flux_native_binary_editor",
+    "crates/flux_ide",
+    "crates/tree-sitter-flux",
+]
+default-members = ["crates/flux_ide"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+license = "GPL-3.0-or-later"
+publish = false
+
+[workspace.lints.rust]
+unexpected_cfgs = { level = "allow" }
+
+[workspace.lints.clippy]
+dbg_macro = "deny"
+todo = "deny"
+declare_interior_mutable_const = "deny"
+
+[workspace.dependencies]
+# External dependencies
+anyhow = "1.0"
+async-trait = "0.1"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tokio = { version = "1.0", features = ["full"] }
+tracing = "0.1"
+tree-sitter = { version = "0.26", features = ["wasm"] }
+tree-sitter-flux = { path = "crates/tree-sitter-flux" }
+semver = "1.0"
+toml = "0.8"
+walkdir = "2"
+glob = "0.3"
+regex = "1"
+parking_lot = "0.12"
+crossbeam = "0.8"
+bitflags = "2"
+smallvec = "1"
+imara-diff = "0.4"
+encoding_rs = "0.8"
+shellexpand = "0.1"
+dialoguer = { version = "0.12", default-features = false }
+mime = "0.3"
+rodio = { git = "https://github.com/RustAudio/rodio", rev = "e50e726ddd0292f6ef9de0dda6b90af4ed1fb66a", features = ["wav", "playback", "wav_output", "recording"] }
+uuid = { version = "1.0", features = ["v4", "serde"] }
+once_cell = "1"
+lazy_static = "1"
+bincode = "1"
+byteorder = "1"
+nom = "7"
+goblin = "0.7"
+object = "0.35"
+scroll = "0.11"
+addr2line = "0.25"
+gimli = "0.28"
+ppv-lite86 = "0.10"
+x86 = "0.51"
+iced-x86 = "1"
+capstone = "0.12"
+peek = "0.1"
+memmap2 = "0.9"
+tempfile = "3"
+clap = { version = "4.0", features = ["derive"] }
+clap_complete = "4"
+which = "4"
+home = "0.5"
+dirs = "5"
+notify = { git = "https://github.com/zed-industries/notify", rev = "faecbc33db4f59313e5225ef766bfd9e54a54cfd" }
+inotify = "0.10"
+async-channel = "2"
+futures = "0.3"
+postage = "0.2"
+rmp-serde = "1"
+bstr = "1"
+ahash = "0.8"
+indexmap = "2"
+strsim = "0.10"
+itertools = "0.13"
+indoc = "2"
+pretty_assertions = "1"
+ctor = "0.2"
+criterion = "0.5"
+unindent = "0.2"
+
+# ZED crates - path dependencies to local Zed
+gpui = { path = "../zed/crates/gpui", default-features = false }
+gpui_shared_string = { path = "../zed/crates/gpui_shared_string" }
+gpui_macros = { path = "../zed/crates/gpui_macros" }
+gpui_util = { path = "../zed/crates/gpui_util" }
+gpui_linux = { path = "../zed/crates/gpui_linux", default-features = false }
+gpui_macos = { path = "../zed/crates/gpui_macos", default-features = false }
+gpui_platform = { path = "../zed/crates/gpui_platform", default-features = false }
+gpui_tokio = { path = "../zed/crates/gpui_tokio" }
+gpui_web = { path = "../zed/crates/gpui_web" }
+gpui_wgpu = { path = "../zed/crates/gpui_wgpu" }
+gpui_windows = { path = "../zed/crates/gpui_windows", default-features = false }
+language = { path = "../zed/crates/language" }
+language_core = { path = "../zed/crates/language_core" }
+language_extension = { path = "../zed/crates/language_extension" }
+lsp = { path = "../zed/crates/lsp" }
+lsp_locations = { path = "../zed/crates/lsp_locations" }
+ztracing = { path = "../zed/crates/ztracing" }
+zlog = { path = "../zed/crates/zlog" }
+collections = { path = "../zed/crates/collections" }
+util = { path = "../zed/crates/util" }
+settings = { path = "../zed/crates/settings" }
+text = { path = "../zed/crates/text" }
+project = { path = "../zed/crates/project" }
+extension = { path = "../zed/crates/extension" }
+fs = { path = "../zed/crates/fs" }
+rope = { path = "../zed/crates/rope" }
+sum_tree = { path = "../zed/crates/sum_tree" }
+theme = { path = "../zed/crates/theme" }
+ui = { path = "../zed/crates/ui" }
+ui_input = { path = "../zed/crates/ui_input" }
+ui_macros = { path = "../zed/crates/ui_macros" }
+ui_prompt = { path = "../zed/crates/ui_prompt" }
+icons = { path = "../zed/crates/icons" }
+component = { path = "../zed/crates/component" }
+panel = { path = "../zed/crates/panel" }
+workspace = { path = "../zed/crates/workspace" }
+terminal = { path = "../zed/crates/terminal" }
+debugger_ui = { path = "../zed/crates/debugger_ui" }
+debugger_tools = { path = "../zed/crates/debugger_tools" }
+dap = { path = "../zed/crates/dap" }
+dap_adapters = { path = "../zed/crates/dap_adapters" }
+git = { path = "../zed/crates/git" }
+search = { path = "../zed/crates/search" }
+scheduler = { path = "../zed/crates/scheduler" }
+task = { path = "../zed/crates/task" }
+watch = { path = "../zed/crates/watch" }
+http_client = { path = "../zed/crates/http_client" }
+json_schema_store = { path = "../zed/crates/json_schema_store" }
+ec4rs = { path = "../zed/crates/ec4rs" }
+fuzzy_nucleo = { path = "../zed/crates/fuzzy_nucleo" }
+
+[profile.dev]
+opt-level = 0
+debug = true
+
+[profile.release]
+opt-level = 3
+debug = false
+lto = "thin"
+codegen-units = 1
+
+[profile.test]
+opt-level = 2
+debug = true

@@ -1,0 +1,16 @@
+[package]
+name = "tree-sitter-flux"
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+publish = false
+
+[lib]
+name = "tree_sitter_flux"
+path = "src/lib.rs"
+
+[build-dependencies]
+cc = "1.0"
+
+[dependencies]
+tree-sitter = { workspace = true }

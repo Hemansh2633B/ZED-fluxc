@@ -1,0 +1,73 @@
+[package]
+name = "flux_ide"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies]
+anyhow.workspace = true
+async-trait.workspace = true
+gpui.workspace = true
+gpui_shared_string.workspace = true
+gpui_macros.workspace = true
+gpui_util.workspace = true
+language.workspace = true
+language_core.workspace = true
+lsp.workspace = true
+flux_parser = { path = "../flux_parser" }
+flux_lsp = { path = "../flux_lsp" }
+flux_binary_view = { path = "../flux_binary_view" }
+flux_visualizer = { path = "../flux_visualizer" }
+flux_memory = { path = "../flux_memory" }
+flux_data_inspector = { path = "../flux_data_inspector" }
+flux_bit_slice = { path = "../flux_bit_slice" }
+flux_struct_visualizer = { path = "../flux_struct_visualizer" }
+flux_endianness = { path = "../flux_endianness" }
+flux_binary_playground = { path = "../flux_binary_playground" }
+flux_comptime_viz = { path = "../flux_comptime_viz" }
+flux_contract_inspector = { path = "../flux_contract_inspector" }
+flux_template_viz = { path = "../flux_template_viz" }
+flux_binary_explorer = { path = "../flux_binary_explorer" }
+flux_build_dashboard = { path = "../flux_build_dashboard" }
+flux_project_analyzer = { path = "../flux_project_analyzer" }
+flux_native_binary_editor = { path = "../flux_native_binary_editor" }
+flux_debugger = { path = "../flux_debugger" }
+flux_build = { path = "../flux_build" }
+serde.workspace = true
+serde_json.workspace = true
+tokio.workspace = true
+tracing.workspace = true
+ztracing.workspace = true
+zlog.workspace = true
+util.workspace = true
+settings.workspace = true
+project.workspace = true
+workspace.workspace = true
+extension.workspace = true
+terminal.workspace = true
+debugger_ui.workspace = true
+debugger_tools.workspace = true
+dap.workspace = true
+dap_adapters.workspace = true
+git.workspace = true
+search.workspace = true
+ui.workspace = true
+ui_input.workspace = true
+icons.workspace = true
+component.workspace = true
+panel.workspace = true
+theme.workspace = true
+text.workspace = true
+rope.workspace = true
+sum_tree.workspace = true
+task.workspace = true
+scheduler.workspace = true
+watch.workspace = true
+http_client.workspace = true
+json_schema_store.workspace = true
+clap.workspace = true
+clap_complete.workspace = true
